@@ -4,17 +4,15 @@ import java.util.Date;
 import java.util.List;
 
 public class Order {
-    // Represents an order, containing fields such as order ID, list of items, status, priority, and customer details.
-    // Fields include order ID, list of items, status, priority, and customer details.
-    // ID would be the unique identifier for the order, it would be an integer.
     private int id;
-    private List<InventoryItem> items;
+    private List<Item> items;
     private Date orderDate;
     private Date estimatedDeliveryTime;
     private String status;
     private int priority;
     private Customer customer;
-    public Order(int id, List<InventoryItem> items, Date orderDate, Date estimatedDeliveryTime, String status, int priority, Customer customer) {
+    
+    public Order(int id, List<Item> items, Date orderDate, Date estimatedDeliveryTime, String status, int priority, Customer customer) {
         this.id = id;
         this.items = items;
         this.orderDate = orderDate;
@@ -29,10 +27,10 @@ public class Order {
     public void setId(int id) {
         this.id = id;
     }
-    public List<InventoryItem> getItems() {
+    public List<Item> getItems() {
         return items;
     }
-    public void setItems(List<InventoryItem> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
     public Date getOrderDate() {
