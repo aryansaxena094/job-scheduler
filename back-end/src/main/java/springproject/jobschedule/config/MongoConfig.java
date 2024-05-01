@@ -10,7 +10,6 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
 public class MongoConfig {
-    // Configures MongoDB, including setting up the connection, database settings, and potentially customizing serialization/deserialization behaviors for certain types that don't map directly to database columns naturally.
 
     public static void main(String[] args) {
         String connectionString = "mongodb+srv://akashbahri90:<password>@cluster0.u97s9sw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -23,11 +22,8 @@ public class MongoConfig {
                 .applyConnectionString(new ConnectionString(connectionString))
                 .serverApi(serverApi)
                 .build();
-
-        // Create a new client and connect to the server
         try (MongoClient mongoClient = MongoClients.create(settings)) {
             try {
-                // Send a ping to confirm a successful connection
                 MongoDatabase database = mongoClient.getDatabase("admin");
                 database.runCommand(new Document("ping", 1));
                 System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
