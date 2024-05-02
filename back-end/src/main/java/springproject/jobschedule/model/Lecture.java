@@ -1,13 +1,18 @@
 package springproject.jobschedule.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("lecture")
 public class Lecture {
-    private Long id;
+    @Id
+    private String id;
     private Course course;
     private int identifier;
     private String title;
     private String seeAlso;
     private Topic topic;
-    public Lecture(Long id, Course course, int identifier, String title, String seeAlso, Topic topic) {
+    public Lecture(String id, Course course, int identifier, String title, String seeAlso, Topic topic) {
         this.id = id;
         this.course = course;
         this.identifier = identifier;
@@ -15,10 +20,10 @@ public class Lecture {
         this.seeAlso = seeAlso;
         this.topic = topic;
     }
-    public Long getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
     public Course getCourse() {

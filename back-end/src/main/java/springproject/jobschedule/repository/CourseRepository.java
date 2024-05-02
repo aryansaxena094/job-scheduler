@@ -1,5 +1,9 @@
 package springproject.jobschedule.repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+import springproject.jobschedule.model.Course;
 
-public class CourseRepository {
+@Repository
+public interface CourseRepository extends MongoRepository<Course, String> {
     
 }

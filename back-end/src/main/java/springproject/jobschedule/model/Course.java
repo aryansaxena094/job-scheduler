@@ -2,8 +2,13 @@ package springproject.jobschedule.model;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("courses")
 public class Course {
-    private Long id;
+    @Id
+    private String id;
     private Integer course_id;
     private String title;
     private Integer credits;
@@ -11,12 +16,12 @@ public class Course {
     private String component_description;
     private String career;
     private String course_code;
-    private List<Course> prerequisites;
-    private List<Course> never_taken;
-    private List<Course> equivalent_courses;
-    public Course(Long id, Integer course_id, String title, Integer credits, String component,
-            String component_description, String career, String course_code, List<Course> prerequisites,
-            List<Course> never_taken, List<Course> equivalent_courses) {
+    private List<String> prerequisites;
+    private List<String> never_taken;
+    private List<String> equivalent_courses;
+    public Course(String id, Integer course_id, String title, Integer credits, String component,
+            String component_description, String career, String course_code, List<String> prerequisites,
+            List<String> never_taken, List<String> equivalent_courses) {
         this.id = id;
         this.course_id = course_id;
         this.title = title;
@@ -29,10 +34,10 @@ public class Course {
         this.never_taken = never_taken;
         this.equivalent_courses = equivalent_courses;
     }
-    public Long getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
     public Integer getCourse_id() {
@@ -77,22 +82,22 @@ public class Course {
     public void setCourse_code(String course_code) {
         this.course_code = course_code;
     }
-    public List<Course> getPrerequisites() {
+    public List<String> getPrerequisites() {
         return prerequisites;
     }
-    public void setPrerequisites(List<Course> prerequisites) {
+    public void setPrerequisites(List<String> prerequisites) {
         this.prerequisites = prerequisites;
     }
-    public List<Course> getNever_taken() {
+    public List<String> getNever_taken() {
         return never_taken;
     }
-    public void setNever_taken(List<Course> never_taken) {
+    public void setNever_taken(List<String> never_taken) {
         this.never_taken = never_taken;
     }
-    public List<Course> getEquivalent_courses() {
+    public List<String> getEquivalent_courses() {
         return equivalent_courses;
     }
-    public void setEquivalent_courses(List<Course> equivalent_courses) {
+    public void setEquivalent_courses(List<String> equivalent_courses) {
         this.equivalent_courses = equivalent_courses;
     }
 }

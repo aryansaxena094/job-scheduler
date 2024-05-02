@@ -1,18 +1,22 @@
 package springproject.jobschedule.model;
-
 import java.util.HashMap;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("students")
 public class Student {
-    private Long id;
+    @Id
+    private String id;
     private String first_name;
     private String last_name;
     private String email;
     private transient Long password;
     private String id_number;
     private boolean enrolled;
-    private HashMap<Course, Grade> courses;
-    public Student(Long id, String first_name, String last_name, String email, Long password, String id_number,
-            boolean enrolled, HashMap<Course, Grade> courses) {
+    private HashMap<String, Grade> courses;
+    public Student(String id, String first_name, String last_name, String email, Long password, String id_number,
+            boolean enrolled, HashMap<String, Grade> courses) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -22,10 +26,10 @@ public class Student {
         this.enrolled = enrolled;
         this.courses = courses;
     }
-    public Long getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getFirst_name() {
@@ -64,10 +68,10 @@ public class Student {
     public void setEnrolled(boolean enrolled) {
         this.enrolled = enrolled;
     }
-    public HashMap<Course, Grade> getCourses() {
+    public HashMap<String, Grade> getStrings() {
         return courses;
     }
-    public void setCourses(HashMap<Course, Grade> courses) {
+    public void setStrings(HashMap<String, Grade> courses) {
         this.courses = courses;
     }
 }
