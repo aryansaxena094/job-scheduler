@@ -4,23 +4,45 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document("courses")
 public class Course {
     @Id
     private String id;
+
+    @Field("Course ID")
     private Integer course_id;
+    
+    @Field("Long Title")
     private String title;
+
+    @Field("Class Units")
     private Integer credits;
+
+    @Field("Component Code")
     private String component;
+
+    @Field("Component Descr")
     private String component_description;
+
+    @Field("Career")
     private String career;
-    private String course_code;
+
+    @Field("Course Code")
+    private String courseCode;
+
+    @Field("Prerequisites")
     private List<String> prerequisites;
+
+    @Field("Never_Taken")
     private List<String> never_taken;
+
+    @Field("Equivalent_Courses")
     private List<String> equivalent_courses;
+
     public Course(String id, Integer course_id, String title, Integer credits, String component,
-            String component_description, String career, String course_code, List<String> prerequisites,
+            String component_description, String career, String courseCode, List<String> prerequisites,
             List<String> never_taken, List<String> equivalent_courses) {
         this.id = id;
         this.course_id = course_id;
@@ -29,7 +51,7 @@ public class Course {
         this.component = component;
         this.component_description = component_description;
         this.career = career;
-        this.course_code = course_code;
+        this.courseCode = courseCode;
         this.prerequisites = prerequisites;
         this.never_taken = never_taken;
         this.equivalent_courses = equivalent_courses;
@@ -77,10 +99,10 @@ public class Course {
         this.career = career;
     }
     public String getCourse_code() {
-        return course_code;
+        return courseCode;
     }
-    public void setCourse_code(String course_code) {
-        this.course_code = course_code;
+    public void setCourse_code(String courseCode) {
+        this.courseCode = courseCode;
     }
     public List<String> getPrerequisites() {
         return prerequisites;

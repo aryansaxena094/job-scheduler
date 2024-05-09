@@ -2,6 +2,7 @@ package springproject.jobschedule.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Entity;
 
 @Document("topics")
 public class Topic {
