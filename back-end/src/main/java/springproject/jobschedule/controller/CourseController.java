@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import springproject.jobschedule.model.Course;
 import springproject.jobschedule.service.CourseService;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 
 @RestController
